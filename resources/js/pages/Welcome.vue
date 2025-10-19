@@ -25,7 +25,6 @@ const mobileMenuOpen = ref(false)
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
-<!--                        <span class="text-xl font-bold tracking-wider">PROYECTO</span>-->
                         <Link href="/" class="flex items-center gap-x-2">
                             <AppLogo />
                         </Link>
@@ -33,7 +32,7 @@ const mobileMenuOpen = ref(false)
                 </div>
 
                 <div class="flex lg:hidden">
-                    <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300">
+                    <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-300 hover:cursor-pointer">
                         <span class="sr-only">Abrir menú principal</span>
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
@@ -61,12 +60,12 @@ const mobileMenuOpen = ref(false)
                         <Button as-child class="ml-2 bg-blue-500 hover:bg-blue-600 text-white">
                             <Link :href="login()">
                                 <UserIcon class="size-5"/>
-                                Iniciar sesión
+                                {{ $t('login') }}
                             </Link>
                         </Button>
                         <Button as-child variant="outline">
                             <Link :href="register()">
-                                Register
+                                {{ $t('register') }}
                             </Link>
                         </Button>
                     </div>
@@ -80,7 +79,7 @@ const mobileMenuOpen = ref(false)
                         <a href="#" class="-m-1.5 p-1.5">
                             <span class="text-xl font-bold tracking-wider">PROYECTO</span>
                         </a>
-                        <button @click="mobileMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300">
+                        <button @click="mobileMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-300 hover:cursor-pointer">
                             <span class="sr-only">Cerrar menú</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -97,7 +96,7 @@ const mobileMenuOpen = ref(false)
                                 <Button as-child class="flex-1 ml-2 bg-blue-500 hover:bg-blue-600">
                                     <Link :href="login()">
                                         <UserIcon class="size-5"/>
-                                        Iniciar sesión
+                                        {{ $t('login') }}
                                     </Link>
                                 </Button>
                                 <button @click="toggleDark()" type="button" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400">
